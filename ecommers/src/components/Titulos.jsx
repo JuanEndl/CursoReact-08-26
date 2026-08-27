@@ -1,11 +1,11 @@
-import React, { Children } from 'react'
+export const Titulos = ({ children }) => {
 
-export const Titulos = () => {
   return (
     <div>
-        <h1>Personas</h1>
+      {children}
     </div>
-  )
-}
+  );
+
+};
 
 export default Titulos;
