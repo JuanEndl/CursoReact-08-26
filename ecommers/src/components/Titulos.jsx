@@ -1,7 +1,7 @@
 export const Titulos = ({ children }) => {
 
   return (
-    <div>
+    <div className="titulo">
       {children}
     </div>
   );

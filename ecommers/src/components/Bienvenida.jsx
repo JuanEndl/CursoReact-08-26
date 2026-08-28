@@ -1,5 +1,6 @@
 import Asistentes from "./Asistentes";
 import { Titulos } from "./Titulos";
+import styles from "./Titulos.module.css"
 
 const Bienvenida = () => {
 
@@ -12,7 +13,7 @@ const Bienvenida = () => {
   return (
     <div>
         <Titulos>
-            <h1>Personas y Trabajos</h1>
+            <h1 className={styles.titulo}>Personas y Trabajos</h1>
         </Titulos>
       <Asistentes personas={asistentes} />
     </div>
