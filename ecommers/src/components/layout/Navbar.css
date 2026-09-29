@@ -1,0 +1,67 @@
+.navBAr{
+    background-color: #212042;
+}
+
+.iconSearch{
+    color: white;
+}
+.shoppingCart{
+    color: white;
+    max-width: 59px;
+    max-height: 59px;
+    transform: scaleX(-1);
+}
+
+.qty{
+    width: 23px;
+    height: 23px;
+    border-radius: 100px;
+    background-color: white;
+    opacity: 0.5;
+    position: relative;
+    left: 69px;
+    top: 14px;
+}
+
+.buttonUsuario{
+    width: 100px;
+    height: 50px;
+    background: #2c698d;
+    border-radius: 50px;
+    box-shadow: rgba(255, 253, 253, 0.16) 0px 1px 4px, rgb(255, 255, 255) 0px 0px 0px 3px;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+.text-color{
+    color: white
+}
+
+/*****/
+
+.containerButtonNavBar{
+    height: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    background: #e3f6f5
+}
+
+.buttonNavBar{
+    box-shadow: #212042;
+    transition: all .3s;
+    
+}
+
+.buttonNavBar:active{
+    position:relative;
+	top:1px;
+    
+}
+
+.buttonNavBar:hover{
+    opacity: 0.70;
+}
