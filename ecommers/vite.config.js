@@ -8,6 +8,4 @@ react(),
 tailwindcss(),
 ],
 
-base: '/CursoReact-08-26/',
-
 });

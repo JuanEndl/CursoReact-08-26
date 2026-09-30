@@ -15,7 +15,7 @@ const { category } = useParams();
 
 useEffect(() => {
 
-    fetch('/datos/productos.json')
+    fetch(`${import.meta.env.BASE_URL}datos/productos.json`)
         .then((response) => {
 
             if (!response.ok) {
