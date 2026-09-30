@@ -1,70 +1,84 @@
-import ItemList from './ItemList';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+
+import ItemList from './ItemList';
 
 import './ItemList.css';
 
 const ItemListContainer = () => {
 
-    const [productos, setProductos] = useState([]);
-    const [loading, setLoading] = useState(true);
 
-    const { category } = useParams();
+const [productos, setProductos] = useState([]);
 
-    useEffect(() => {
+const { category } = useParams();
 
-        fetch('/datos/productos.json')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('No se pudieron cargar los productos');
-                }
 
-                return response.json();
-            })
-            .then((data) => {
-                console.log('Productos cargados:', data);
-                setProductos(data);
-            })
-            .catch((error) => {
-                console.error('Error al cargar productos:', error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+useEffect(() => {
 
-    }, []);
+    fetch('/datos/productos.json')
+        .then((response) => {
 
-    // Filtrar productos por categoría
-    const filterCategory = category
-        ? productos.filter((product) => product.category === category)
-        : productos;
+            if (!response.ok) {
+                throw new Error('No se pudo cargar productos.json');
+            }
 
-    console.log('Categoría:', category);
-    console.log('Productos filtrados:', filterCategory);
+            return response.json();
 
-    if (loading) {
-        return <p className="loader">Cargando productos...</p>;
-    }
+        })
+        .then((data) => {
 
-    return (
-        <section className="cardForm">
+            console.log('Productos cargados:', data);
 
-            {filterCategory.length > 0 ? (
+            setProductos(data);
 
-                filterCategory.map((product) => (
-                    <div key={product.id}>
-                        <ItemList product={product} />
-                    </div>
-                ))
+        })
+        .catch((error) => {
 
-            ) : (
+            console.error('Error cargando productos:', error);
 
-                <p>No se encontraron productos.</p>
+        });
 
-            )}
+}, []);
 
-        </section>
+
+let productosFiltrados = productos;
+
+
+if (category) {
+
+    productosFiltrados = productos.filter(
+        (producto) =>
+            producto.categoria.toLowerCase() === category.toLowerCase()
     );
+
+}
+
+
+return (
+    <section className="cardForm">
+
+        {productosFiltrados.length > 0 ? (
+
+            productosFiltrados.map((product) => (
+
+                <div key={product.id}>
+                    <ItemList product={product} />
+                </div>
+
+            ))
+
+        ) : (
+
+            <p className="text-center text-gray-500 py-10">
+                Cargando productos...
+            </p>
+
+        )}
+
+    </section>
+);
+
+
 };
 
 export default ItemListContainer;

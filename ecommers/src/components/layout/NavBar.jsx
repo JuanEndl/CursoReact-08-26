@@ -39,27 +39,27 @@ const NavBar = () => {
 				</Link>
 			</div>
 			<div className='buttonNavBar'>
-				<Link to={`/categoria/fuente`}>
+				<Link to={`/categoria/fuentes`}>
 					<h2 className="title-font font-medium text-gray-900 tracking-widest text-sm">Fuentes</h2>
 				</Link>
 			</div>
 			<div className='buttonNavBar'>
-				<Link to={`/categoria/placavideo`}>
+				<Link to={`/categoria/Placa de Video`}>
 					<h2 className="title-font font-medium text-gray-900 tracking-widest text-sm">Placa de video</h2>
 				</Link>
 			</div>
 			<div className='buttonNavBar'>
-				<Link to={`/categoria/memoria`}>
+				<Link to={`/categoria/Memoria ram`}>
 					<h2 className="title-font font-medium text-gray-900 tracking-widest text-sm">Memoria Ram</h2>
 				</Link>
 			</div>
 			<div className='buttonNavBar'>
-				<Link to={`/categoria/mother`}>
+				<Link to={`/categoria/Motherboard`}>
 					<h2 className="title-font font-medium text-gray-900 tracking-widest text-sm">Motherboard</h2>
 				</Link>
 			</div>
 			<div className='buttonNavBar'>
-				<Link to={`/categoria/procesador`}>
+				<Link to={`/categoria/Procesador`}>
 					<h2 className="title-font font-medium text-gray-900 tracking-widest text-sm">Procesador</h2>
 				</Link>
 			</div>
