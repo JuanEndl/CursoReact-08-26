@@ -1,6 +1,8 @@
+import React from 'react';
 
 import CartWidget from './CartWidget';
 import logo from '../../assets/iconos/logo.png';
+import { ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
 import './Navbar.css';
@@ -14,8 +16,8 @@ const NavBar = () => {
 	<>
 		<section className="navBAr">
 			<div className="header">
-				<div className="w-screen flex flex-row items-center p-1 justify-between  shadow-xs">
-					<div className="ml-8 text-lg text-gray-700 hidden md:flex">
+				<div className="">
+					<div className="">
 						<Link to="/">
 							<img className="logoApp" src={logo} alt="logo" />
 						</Link>
@@ -23,7 +25,9 @@ const NavBar = () => {
 					<div className="flex flex-row-reverse mr-4 ml-4 md:hidden">
 						<i className="fas fa-bars" />
 					</div>
-
+					<div className="flex flex-row-reverse mr-8 hidden md:flex">
+						<CartWidget/>
+					</div>
 				</div>
 			</div>
 		</section>
