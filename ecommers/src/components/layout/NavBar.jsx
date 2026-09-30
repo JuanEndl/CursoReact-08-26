@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CartWidget from './CartWidget';
-import logo from '../assets/iconos/logo.png';
+import logo from '../../assets/iconos/logo.png';
 import { ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
