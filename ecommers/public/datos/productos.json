@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "categoria": "Procesador",
+        "nombre": "Procesador (CPU)",
+        "descripcion": "El cerebro del equipo. Procesa las instrucciones y ejecuta el sistema operativo y los programas.",
+        "precio": "200.000",
+        "img": "/src/assets/img/procesador/Procesador AMD Ryzen 9 5900X 4.8GHz Turbo AM4 - No incluye Cooler.jpg"
+    },
+    {
+        "id": 2,
+        "categoria": "Placa de Video",
+        "nombre": "Tarjeta Gráfica (GPU)",
+        "descripcion": "Encargada del procesamiento gráfico 3D, edición de video, renderizado e Inteligencia Artificial.",
+        "precio": "600.000",
+        "img": "/src/assets/img/video card/Placa de Video MSI GeForce RTX 3090 24GB GDDR6X GAMING X TRIO.jpg"
+    },
+    {
+        "id": 3,
+        "categoria": "Motherboard",
+        "nombre": "Motherboard",
+        "descripcion": "Placa principal que conecta e interconecta el procesador, memoria, almacenamiento y periféricos.",
+        "precio": "300.000",
+        "img": "/src/assets/img/mothers/Motherboard Asus Am4 Tuf Gaming B450m-plus Ii Box M-atx.png"
+    },
+    {
+        "id": 4,
+        "categoria": "Memoria ram",
+        "nombre": "Módulo de Memoria RAM",
+        "descripcion": "Almacenamiento de acceso aleatorio a alta velocidad para tareas y programas activos en tiempo real.",
+        "precio": "50.000",
+        "img": "/src/assets/img/ram/Memoria Adata DDR4 (2x8GB) 16GB 4800MHz XPG Spectrix D50 Xtreme RGB CL19.jpg"
+    },
+    {
+        "id": 6,
+        "categoria": "fuentes",
+        "nombre": "Fuente de Poder (PSU)",
+        "descripcion": "Suministra energía eléctrica continua, limpia y regulada a todos los componentes internos.",
+        "precio": "100.000",
+        "img": "/src/assets/img/power font/Fuente De Poder Gigabyte 850w 80 Plus Gold Modular.png"
+    }
+]

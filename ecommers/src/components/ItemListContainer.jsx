@@ -1,72 +1,70 @@
-
-
-
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import './ItemList.css';
 
-
 const ItemListContainer = () => {
-	
-	
-	useEffect(() => {
-		
-		//// traigo todos los productos
-		getProducts().then(data => {
-			setproductos(data)
-		})
-		
-		/// traigo el category de firebase
-		getProductsCategory('category' , 'category').then ( data => {
-			console.log(data)
-		})
-		
-		
-	}, [])
-	
-		// guardo los archivos traidos en productos
-		const [productos, setproductos] = useState([]) 
-		console.log(productos)
-		
-		/// uso el parametro category del producto
-		const {category} = useParams ()
-	
 
-	///////////////////////// filtrado de prodcutos
-    let filterCategory = productos.filter(products => products.category === category) 
-    console.log(filterCategory)
-    
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    if ( category
-    ) {
-            filterCategory = productos.filter(products => products.category === category) 
-    } else {
-        filterCategory = productos 
+    const { category } = useParams();
+
+    useEffect(() => {
+
+        fetch('/datos/productos.json')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('No se pudieron cargar los productos');
+                }
+
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Productos cargados:', data);
+                setProductos(data);
+            })
+            .catch((error) => {
+                console.error('Error al cargar productos:', error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+
+    }, []);
+
+    // Filtrar productos por categoría
+    const filterCategory = category
+        ? productos.filter((product) => product.category === category)
+        : productos;
+
+    console.log('Categoría:', category);
+    console.log('Productos filtrados:', filterCategory);
+
+    if (loading) {
+        return <p className="loader">Cargando productos...</p>;
     }
-	//////////////////
 
+    return (
+        <section className="cardForm">
 
-//filtro y .map a itemList
+            {filterCategory.length > 0 ? (
 
-	return (
-    <>
-		<section className="cardForm">
-			{filterCategory.length ? (
-				filterCategory.map((product) => { 
-					return (
-						<div key={product.id}>
-							<ItemList product={product}/>
-						</div>
-					);
-				})
-			) : (
-				<p className="loader" />
-			)}
-		</section>
-    </>
-	);
+                filterCategory.map((product) => (
+                    <div key={product.id}>
+                        <ItemList product={product} />
+                    </div>
+                ))
+
+            ) : (
+
+                <p>No se encontraron productos.</p>
+
+            )}
+
+        </section>
+    );
 };
 
 export default ItemListContainer;

@@ -1,7 +1,6 @@
 
 //Item list card con toda la info
 
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemList = ({ product }) => {
@@ -15,13 +14,13 @@ const ItemList = ({ product }) => {
 					</div>
 					<div className='itemListSet'>
 						<div className='iltemListCategory'>
-							<p>{product.category}</p>
+							<p>{product.categoria}</p>
 						</div>
 						<div>
-							<h4>{product.title}</h4>
+							<h4>{product.nombre}</h4>
 						</div>
 						<div>
-							<h2>${product.price}</h2>
+							<h2>${product.precio}</h2>
 						</div>
 						<div className='btnSeeMore'>
 							<Link to={`/detail/${product.id}`}>
