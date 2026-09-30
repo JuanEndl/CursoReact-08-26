@@ -4,16 +4,6 @@ import { useState } from "react";
 
 
 
-
-
-
-
-
-
-
-
-
-
 const CartContext = createContext();
 
 export function CartContextProvider({ children }) {

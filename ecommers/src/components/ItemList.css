@@ -124,7 +124,7 @@
 
 .btnSeeMore .btn:hover{
     transform: translateY(-5px);
-    box-shadow: 0 30px 20px #bae8e8;
+    box-shadow: 0 30px 20px black;
 }
 
 .btnSeeMore .btn:active {

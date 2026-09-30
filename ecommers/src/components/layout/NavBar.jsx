@@ -1,8 +1,6 @@
-import React from 'react';
 
 import CartWidget from './CartWidget';
 import logo from '../../assets/iconos/logo.png';
-import { ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
 import './Navbar.css';
@@ -25,9 +23,7 @@ const NavBar = () => {
 					<div className="flex flex-row-reverse mr-4 ml-4 md:hidden">
 						<i className="fas fa-bars" />
 					</div>
-					<div className="flex flex-row-reverse mr-8 hidden md:flex">
-						<CartWidget/>
-					</div>
+
 				</div>
 			</div>
 		</section>

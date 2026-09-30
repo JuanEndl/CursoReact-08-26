@@ -24,7 +24,7 @@ const ItemList = ({ product }) => {
 						</div>
 						<div className='btnSeeMore'>
 							<Link to={`/detail/${product.id}`}>
-								<button className='text-color btn'>Ver mas</button>
+								<button className='text-black btn'>Ver mas</button>
 							</Link>
 						</div>
 					</div>
