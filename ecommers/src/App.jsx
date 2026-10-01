@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Footer from "../components/layout/Footer";
+import Footer from './components/layout/Footer.jsx'
 import ItemListContainer from './components/ItemListContainer.jsx';
 import NavBar from './components/layout/NavBar.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx';
